@@ -96,6 +96,15 @@
         echo '<h1 class="mt-5">Bem vindo querido usuário chamado '.$_SESSION['nome'].' </h1>'; 
         echo '<p class="lead">Seja bem vindo ao sistema de cadastro de clientes e produtos!</p>';
     ?>
+    <br>
+    <div class="card" style="width: 18rem;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Relatório de produtos cadastrados</h5>
+          <p class="card-text">Mostra ao usuário a relação de produtos cadastrados no sistema com a possibilidade de impressão da página.</p>
+          <a href="#" class="btn btn-primary">Gerar</a>
+        </div>
+    </div>
   </div>
 </main>
 

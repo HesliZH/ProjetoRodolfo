@@ -8,7 +8,7 @@
 		{
 			try {
 				if (self::$objCNX == null){
-					$stringConexao = "host=localhost port=5432 dbname=loja user=postgres password=postgres";
+					$stringConexao = "host=localhost port=5432 dbname=empresa user=postgres password=postgres";
 					self::$objCNX = pg_connect($stringConexao);
 				}
 			} catch (Exception $e) {
