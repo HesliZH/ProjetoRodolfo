@@ -8,7 +8,7 @@ abstract class DBUsuario extends DBConexao{
 
         $query = pg_query($conexao, "SELECT ID, NOME, USUARIO, SENHA, ATIVO, NIVEL
         FROM TBLUSUARIO WHERE USUARIO = '".$usuario->getUsuario()."'
-        AND SENHA = '".$usuario->getSenha()."'
+        AND SENHA = md5('".$usuario->getSenha()."')
         AND ATIVO = 1");
 
         $dataset = pg_fetch_assoc($query);

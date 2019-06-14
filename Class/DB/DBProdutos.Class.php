@@ -78,5 +78,14 @@
                 return "Erro ao excluir";
             }
         }
+
+        public static function DBRelatorio($filtro){
+            $conexao = parent::getDB();
+            
+            $query = pg_query($conexao, "SELECT ID, DESCRICAO, QTD_ESTOQUE, PRECO_VENDA FROM TBLPRODUTOS WHERE CAST(ID AS VARCHAR)
+                                        LIKE '%".$filtro."%' OR DESCRICAO LIKE '%".$filtro."%' OR 'TODOS' = '".$filtro."'");
+
+            return pg_fetch_all($query);
+        }
 	}		
 ?>

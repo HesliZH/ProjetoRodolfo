@@ -80,4 +80,8 @@
         public function Buscar($id){
             return parent::DBBuscar($id);
         }
+
+        public function Relatorio($filtro){
+            return parent::DBRelatorio($filtro);
+        }
     }

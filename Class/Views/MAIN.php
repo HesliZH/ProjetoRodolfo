@@ -85,6 +85,10 @@
         <!--<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">-->
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Sair</button>
       </form>
+      <!--Modal de filtragem-->
+      
+
+    <!--Div final da nav bar--> 
     </div>
   </nav>
 </header>
@@ -98,11 +102,11 @@
     ?>
     <br>
     <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="../../Img/icone-produtos.png" class="card-img-top" alt="..." width="256" height="256">
         <div class="card-body">
           <h5 class="card-title">Relatório de produtos cadastrados</h5>
           <p class="card-text">Mostra ao usuário a relação de produtos cadastrados no sistema com a possibilidade de impressão da página.</p>
-          <a href="#" class="btn btn-primary">Gerar</a>
+          <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#relatorioProduto">Gerar</a>
         </div>
     </div>
   </div>
@@ -113,7 +117,30 @@
     <span class="text-muted">Sistema elaborado pelo academico de Sistemas de Informação Hesli Hendrik Azevedo.</span>
   </div>
 </footer>
-        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
+
+      <div class="modal" id="relatorioProduto">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Filtro de relatórios</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <form action="../Relatorios/RELATORIO_1.php" method="POST">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="filtro1">Código ou descrição:</label>
+                            <input type="text" class="form-control" id="filtro1" placeholder="" name="filtro1" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Imprimir</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
