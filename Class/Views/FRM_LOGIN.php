@@ -40,7 +40,7 @@
               <input type="checkbox" value="remember-me"> Lembre de mim :D
             </label>
         </div>
-              <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+              <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
               <p class="mt-5 mb-3 text-muted">&copy; 2019 - HitKill Software</p>
         </form>
     </body>

@@ -44,6 +44,7 @@ abstract class DBUsuario extends DBConexao{
     }
     
     public static function DBListar(){
+        $rodox;
         $conexao = parent::getDB();
 
         $query = pg_query($conexao, "SELECT id, nome, usuario, ativo, nivel FROM tblusuario ORDER BY id");
