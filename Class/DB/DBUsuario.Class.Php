@@ -31,7 +31,7 @@ abstract class DBUsuario extends DBConexao{
     public static function DBInserir(Usuario $usuarios){
         $conexao = parent::getDB();
 
-        $query = pg_query($conexao, "INSERT INTO tblusuario (nome, senha, nivel, usuario) VALUES ('".$usuarios->getNome()."', '".$usuarios->getSenha()."', '".$usuarios->getNivel()."', '".$usuarios->getUsuario()."')");
+        $query = pg_query($conexao, "INSERT INTO tblusuario (nome, senha, nivel, usuario) VALUES ('".$usuarios->getNome()."', md5('".$usuarios->getSenha()."'), '".$usuarios->getNivel()."', '".$usuarios->getUsuario()."')");
             
         if ($query)
         {
@@ -54,7 +54,7 @@ abstract class DBUsuario extends DBConexao{
     public static function DBAtualizar(Usuario $usuarios){
         $conexao = parent::getDB();
 
-        $query = pg_query("UPDATE tblusuario SET nome = '".$usuarios->getNome()."', usuario = '".$usuarios->getUsuario()."', senha = '".$usuarios->getSenha()."', nivel = '".$usuarios->getNivel()."' WHERE id = ".$usuarios->getId());
+        $query = pg_query("UPDATE tblusuario SET nome = '".$usuarios->getNome()."', usuario = md5('".$usuarios->getUsuario()."'), senha = '".$usuarios->getSenha()."', nivel = '".$usuarios->getNivel()."' WHERE id = ".$usuarios->getId());
         
         if ($query)
         {
